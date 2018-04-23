@@ -1,0 +1,85 @@
+﻿<div class="edit_form">
+    <div class="line">
+        @Html.DevExpress().Label(
+            editorSettings => {
+                editorSettings.ControlStyle.CssClass = "label";
+                editorSettings.Text = "Name:";
+                editorSettings.AssociatedControlName = "Name";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            editorSettings => {
+                editorSettings.Name = "Name";
+                editorSettings.ControlStyle.CssClass = "editor";
+            }
+        ).GetHtml()
+    </div>
+    <div class="line">
+        @Html.DevExpress().Label(
+            editorSettings => {
+                editorSettings.ControlStyle.CssClass = "label";
+                editorSettings.Text = "Age:";
+                editorSettings.AssociatedControlName = "Age";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            editorSettings => {
+                editorSettings.Name = "Age";
+                editorSettings.ControlStyle.CssClass = "editor";
+            }
+        ).GetHtml()
+    </div>
+    <div class="line">
+        @Html.DevExpress().Label(
+            editorSettings => {
+                editorSettings.ControlStyle.CssClass = "label";
+                editorSettings.Text = "Email:";
+                editorSettings.AssociatedControlName = "Email";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            editorSettings => {
+                editorSettings.Name = "Email";
+                editorSettings.ControlStyle.CssClass = "editor";
+            }
+        ).GetHtml()
+    </div>
+    <div class="line">
+        @Html.DevExpress().Label(
+            editorSettings => {
+                editorSettings.ControlStyle.CssClass = "label";
+                editorSettings.Text = "Arrival Date:";
+                editorSettings.AssociatedControlName = "ArrivalDate";
+            }
+        ).GetHtml()
+        @Html.DevExpress().DateEdit(
+            editorSettings => {
+                editorSettings.Name = "ArrivalDate";
+                editorSettings.ControlStyle.CssClass = "editor";
+            }
+        ).GetHtml()
+    </div>
+    <div class="line">
+        @Html.DevExpress().Label(
+            editorSettings => {
+                editorSettings.ControlStyle.CssClass = "label";
+            }
+        ).GetHtml()
+        @Html.DevExpress().Button(
+            buttonSettings => {
+                buttonSettings.Name = "btnUpdate";
+                buttonSettings.ControlStyle.CssClass = "button";
+                buttonSettings.Text = "Update";
+                buttonSettings.ClientSideEvents.Click = "OnButtonClick";
+            }
+        ).GetHtml()
+        @Html.DevExpress().Button(
+            buttonSettings => {
+                buttonSettings.Name = "btnClear";
+                buttonSettings.ControlStyle.CssClass = "button";
+                buttonSettings.Text = "Clear";
+                buttonSettings.ClientSideEvents.Click = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(); }";
+            }
+        ).GetHtml()
+    </div>
+</div>

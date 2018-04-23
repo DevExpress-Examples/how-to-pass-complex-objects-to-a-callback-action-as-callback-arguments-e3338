@@ -1,0 +1,40 @@
+﻿@using DevExpress.Razor.Models
+
+@functions{
+ bool IsFirstPageLoad() {
+     return ViewData["ErrorMessage"] == null && ViewData["Data"] == null;
+ }
+}
+
+@Html.DevExpress().CallbackPanel( settings => {
+    settings.Name = "callbackPanel";
+    settings.CallbackRouteValues = new { Action = "CallbackPanelPartial", Controller = "Home" };
+    settings.ClientSideEvents.BeginCallback = "OnBeginCallback";
+
+    settings.Width = 200;
+    settings.ControlStyle.CssClass = "InlineClass";
+    
+    settings.SetContent(() => {
+        if (!IsFirstPageLoad()) {
+            ViewContext.Writer.Write("</div style=\"float:left\">");
+            Html.DevExpress().RoundPanel(
+                panelSettings => {
+                    panelSettings.SetContent(() => {
+                        if (ViewData["ErrorMessage"] != null)
+                            ViewContext.Writer.Write("<span>" + ViewData["ErrorMessage"] + "</span>");
+                        else {
+                            MyData data = (MyData)ViewData["Data"];
+                            ViewContext.Writer.Write("<div><span>Name: " + data.Name + "</span></div>");
+                            ViewContext.Writer.Write("<div><span>Age: " + data.Age + "</span></div>");
+                            ViewContext.Writer.Write("<div><span>Email: " + data.Email + "</span></div>");
+                            ViewContext.Writer.Write("<div><span>Arrival Date: " + data.ArrivalDate + "</span></div>");
+                        }
+                    });
+                    panelSettings.Width = 200;
+                }
+            )
+            .Render();
+            ViewContext.Writer.Write("</div>");
+        }
+    });
+}).GetHtml()
