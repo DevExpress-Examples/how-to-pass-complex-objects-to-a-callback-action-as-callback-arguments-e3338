@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/DevExpress.Razor/Controllers/HomeController.cs)
+* [MyModel.cs](./CS/DevExpress.Razor/Models/MyModel.cs)
+* [CallbackPanelPartial.cshtml](./CS/DevExpress.Razor/Views/Home/CallbackPanelPartial.cshtml)
+* [EditorsPartial.cshtml](./CS/DevExpress.Razor/Views/Home/EditorsPartial.cshtml)
+* [Index.cshtml](./CS/DevExpress.Razor/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # How to pass complex objects to a callback Action as callback arguments
 
 
