@@ -8,6 +8,9 @@
 * [Index.cshtml](./CS/DevExpress.Razor/Views/Home/Index.cshtml)
 <!-- default file list end -->
 # How to pass complex objects to a callback Action as callback arguments
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e3338)**
+<!-- run online end -->
 
 
 <p>This sample demonstrates how to convert custom types to the JSON string on the client side and parse this string on the server. The conversion is performed using $<strong>.toJSON</strong>. This function declared in the <a href="http://code.google.com/p/jquery-json/"><u>jquery.json-2.2.min</u></a> file.<br> The JSON string is converted in a Controller's Action using the <strong>JavaScriptSerializer.Deserialize</strong> method.</p>
